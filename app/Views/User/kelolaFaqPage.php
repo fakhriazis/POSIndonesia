@@ -10,7 +10,7 @@
         <thead>
             <tr>
                 <th scope="col">Noma</th>
-                <th scope="col">Pertanyaan</th>
+                <th scope="col">Pertanyaan nya adalah</th>
                 <th scope="col">Aksi</th>
             </tr>
         </thead>
