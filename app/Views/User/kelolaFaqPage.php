@@ -9,7 +9,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Noo</th>
+                <th scope="col">Nouuo</th>
                 <th scope="col">Pertanyaan</th>
                 <th scope="col">Aksi</th>
             </tr>
