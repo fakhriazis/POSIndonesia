@@ -1,4 +1,4 @@
-<?= $this->extend('layout/template'); ?>
+<?= $this->extend('admin/layout/template'); ?>
 
 <?= $this->section('content'); ?>
 
@@ -28,8 +28,7 @@
             <div class="col-md-6">
               <div class="card">
                       <div class="card-header">
-                        <div class="my-3">
-                          <a class="btn btn-success" href="<?= base_url('/admin/tambah')?>" role="button">Tambah Admin</a>
+                        <div class="my-3">                          
                         </div>
                       </div>
                       <!-- /.card-header -->
@@ -53,7 +52,7 @@
                              <td><?= $row->namalayanan ?></td>
                              <td>
                                <button class="btn btn-primary" href="<?= base_url('layanan/edit/'.$row->idlayanan)?>" role="button">Edit</button>
-                               <a class="btn btn-primary" href="<?= base_url('layanan/delete/'.$row->idlayanan)?>" role="button">Delete</a>
+                               <a class="btn btn-primary" href="<?= base_url('admin/csadmin/deletelayanan/'.$row->idlayanan)?>" role="button">Delete</a>
                              </td>
                            </tr>
                              <?php endforeach; ?>
@@ -76,37 +75,23 @@
             <!-- Horizontal Form -->
               <div class="card card-info">
                 <div class="card-header">
-                  <h3 class="card-title">Horizontal Form</h3>
+                  <h3 class="card-title">Tambah Layanan</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="<?=base_url('Admin/CSAdmin/TambahLayanan');?>" method="POST">
                   <div class="card-body">
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                      <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Layanan</label>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        <input type="text" class="form-control" id="namalayanan" placeholder="Nama Layanan" name="namalayanan">
                       </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <div class="offset-sm-2 col-sm-10">
-                        <div class="form-check">
-                          <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                          <label class="form-check-label" for="exampleCheck2">Remember me</label>
-                        </div>
-                      </div>
-                    </div>
+                    </div>                                        
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Sign in</button>
-                    <button type="submit" class="btn btn-default float-right">Cancel</button>
+                    <button type="submit" class="btn btn-primary float-right">Submit</button>
+                    <!-- <a href=# class="btn btn-default float-right">Cancel</a> -->
                   </div>
                   <!-- /.card-footer -->
                 </form>
