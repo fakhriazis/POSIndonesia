@@ -33,9 +33,24 @@ class Admin extends BaseController
         return view('user/referensiPage');
     }
 
+    public function referensiResponCode()
+    {
+        return view('user/referensi/referensiResponCode');
+    }
+
+    public function referensiDataMitraProduk()
+    {
+        return view('/user/referensi/referensiDataMitraProduk');
+    }
+
     public function troubleshooting()
     {
         return view('user/troubleshootingPage');
+    }
+
+    public function report()
+    {
+        return view('user/reportPage');
     }
 
     public function kelolaFaq()
@@ -109,6 +124,31 @@ class Admin extends BaseController
     public function data()
     {
         return view('user/datatable');
+    }
+
+    public function viewTambahFAQ()
+    {
+        return view('user/tambahfaq');
+    }
+    public function TambahFAQ()
+    {
+        // $model = new AdminModel();
+        $data = [
+            'pertanyaan' => $this->request->getPost('pertanyaan'),
+            'jawaban' => $this->request->getPost('jawaban')
+        ];
+        // $model->tambah('help_layanan', $data);
+        return redirect()->to(base_url('/user/kelolaFaq'));
+    }
+
+    public function gangguanSementara()
+    {
+        return view('user/gangguan/gangguanSementara');
+    }
+
+    public function infoGangguan()
+    {
+        return view('/user/gangguan/infoGangguan');
     }
     //--------------------------------------------------------------------
 

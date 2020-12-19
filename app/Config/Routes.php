@@ -35,15 +35,28 @@ $routes->get('/', 'Home::index');
 
 //routes user
 $routes->get('/user', 'User/Admin::index');
+
+//==routes user/referensi
 $routes->get('/user/referensi', 'User/Admin::referensi');
+$routes->get('/user/referensi/respon_code', 'User/Admin::referensiResponCode');
+$routes->get('/user/referensi/data_mitra_produk', 'User/Admin::referensiDataMitraProduk');
+
+//==routes user/gangguan
+$routes->get('/user/gangguan/gangguan_sementara', 'User/Admin::gangguanSementara');
+$routes->get('/user/gangguan/info_gangguan', 'User/Admin::infoGangguan');
+
 $routes->get('/user/troubleshooting', 'User/Admin::troubleshooting');
 $routes->get('/user/kelolaFaq', 'User/Admin::kelolaFaq');
+$routes->get('/user/kelolaFaq/tambah', 'User/Admin::viewtambahfaq');
 $routes->get('/user/catatan', 'User/Admin::catatan');
 $routes->get('/user/catatan/tambah', 'User/Admin::viewTambahCatatan');
 $routes->get('/user/catatan/tambah/aksi', 'User/Admin::TambahCatatan');
 $routes->get('/user/berita', 'User/Admin::berita');
 $routes->get('/user/form', 'User/Admin::form');
 $routes->get('/user/data', 'User/Admin::data');
+$routes->get('/user/troubleshooting', 'User/Admin::troubleshooting');
+$routes->get('/user/referensi', 'User/Admin::referensi');
+$routes->get('/user/report', 'User/Admin::report');
 
 
 /**

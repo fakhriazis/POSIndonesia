@@ -212,17 +212,31 @@
                                 </li>
                             </ul>
                         </li> -->
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
                                 <p>
                                     Data Referensi
-                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= base_url('/user/referensi/respon_code') ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Respon Code</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url('/user/referensi/data_mitra_produk') ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Data Mitra/Produk</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="<?= base_url('/user/troubleshooting') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Troubleshooting
@@ -240,7 +254,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="<?= base_url('/user/report') ?>" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Report
@@ -258,7 +272,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="/user/kelolaFaq" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Kelola Faq
@@ -275,15 +289,30 @@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tree"></i>
                                 <p>
                                     Info Gangguan
-                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?= base_url('/user/gangguan/gangguan_sementara') ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Sementara</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?= base_url('/user/gangguan/info_gangguan') ?>" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Info Gangguan</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
+
 
                     </ul>
                 </nav>

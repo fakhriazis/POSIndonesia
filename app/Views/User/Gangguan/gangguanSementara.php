@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Halaman troubleshooting</h1>
+            <h1>ini halaman gangguan sementara</h1>
         </div>
     </div>
 </div>
