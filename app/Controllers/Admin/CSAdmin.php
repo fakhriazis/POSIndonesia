@@ -42,7 +42,7 @@ class CSAdmin extends BaseController
 			'idakses' => $this->request->getPost('idakses')
 		];
 		$model->tambah('help_user', $data);
-		return redirect()->to(base_url('csadmin/admin'));
+		return redirect()->to(base_url('/admin'));
 	}
 
 	public function viewEditAdmin($id)
@@ -98,28 +98,28 @@ class CSAdmin extends BaseController
 			'idakses' => $this->request->getPost('idakses')
 		];
 		$model->ubah('help_user', 'iduser', $this->request->getPost('iduser'), $data);
-		return redirect()->to(base_url('csadmin/admin'));
+		return redirect()->to(base_url('/admin'));
 	}
 
 	public function editLayanan($id)
 	{
 		$model = new AdminModel();
 		$model->ubah('help_layanan', 'idlayanan', $id);
-		return redirect()->to(base_url('csadmin/layanan'));
+		return redirect()->to(base_url('/layanan'));
 	}
 
 	public function deleteAdmin($id)
 	{
 		$model = new AdminModel();
 		$model->hapus('help_user', 'iduser', $id);
-		return redirect()->to(base_url('csadmin/admin'));
+		return redirect()->to(base_url('/admin'));
 	}
 
 	public function deleteLayanan($id)
 	{
 		$model = new AdminModel();
 		$model->hapus('help_layanan', 'idlayanan', $id);
-		return redirect()->to(base_url('csadmin/layanan'));
+		return redirect()->to(base_url('/layanan'));
 	}
 
 	//--------------------------------------------------------------------
@@ -150,7 +150,7 @@ class CSAdmin extends BaseController
 	public function viewTambahLog()
 	{
 		$model = new AdminModel();
-		$data['title'] = 'Tambah Log';		
+		$data['title'] = 'Tambah Log';
 		return view('Admin\viewtambahlog', $data);
 	}
 }
