@@ -58,6 +58,9 @@ $routes->get('/user/referensi/data_mitra_produk', 'User/Admin::referensiDataMitr
 $routes->get('/user/gangguan/gangguan_sementara', 'User/Admin::gangguanSementara');
 $routes->get('/user/gangguan/info_gangguan', 'User/Admin::infoGangguan');
 
+//==routes user/document control
+$routes->get('/user/document', 'User/Admin::documentControl');
+
 $routes->get('/user/troubleshooting', 'User/Admin::troubleshooting');
 $routes->get('/user/kelolaFaq', 'User/Admin::kelolaFaq');
 $routes->get('/user/kelolaFaq/tambah', 'User/Admin::viewtambahfaq');

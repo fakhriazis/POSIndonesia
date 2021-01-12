@@ -150,6 +150,11 @@ class Admin extends BaseController
     {
         return view('/user/gangguan/infoGangguan');
     }
+
+    public function documentControl()
+    {
+        return view('/user/documentControl');
+    }
     //--------------------------------------------------------------------
 
 }
