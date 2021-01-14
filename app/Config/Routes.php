@@ -61,7 +61,7 @@ $routes->get('/user/gangguan/info_gangguan/tambah', 'User/Admin::tambahInfoGangg
 
 //==routes user/document control
 $routes->get('/user/document', 'User/Admin::documentControl');
-$routes->get('/user/document/tambah', 'Admin/CSAdmin::viewTambahDocument');
+$routes->get('/user/document/tambah', 'Admin/CSAdmin::viewTambahDocument'); //tambah document
 $routes->get('/document', 'Admin/CSAdmin::viewDocument');
 $routes->get('/user/document/detail2', 'Admin/CSAdmin::viewDocumentDetail');
 $routes->get('/user/document/detail', 'User/Admin::viewDocumentDetail');
@@ -72,11 +72,11 @@ $routes->get('/user/troubleshooting/tambah', 'User/Admin::troubleshooting'); //t
 
 //==routes user/kelolaFaq
 $routes->get('/user/kelolaFaq', 'User/Admin::kelolaFaq');
-$routes->get('/user/kelolaFaq/tambah', 'User/Admin::viewtambahfaq');
+$routes->get('/user/kelolaFaq/tambah', 'User/Admin::viewtambahfaq'); //tambah FAQ
 
 //==routes user/catatan
 $routes->get('/user/catatan', 'User/Admin::catatan');
-$routes->get('/user/catatan/tambah', 'User/Admin::viewTambahCatatan');
+$routes->get('/user/catatan/tambah', 'User/Admin::viewTambahCatatan'); //tambah catatan
 $routes->get('/user/catatan/tambah/aksi', 'User/Admin::TambahCatatan');
 
 //==routes berita

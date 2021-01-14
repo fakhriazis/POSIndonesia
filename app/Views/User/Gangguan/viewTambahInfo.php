@@ -21,7 +21,7 @@
     <div class="container">
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title">Form Input Catatan</h3>
+                <h3 class="card-title">Form Input Gangguan</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->

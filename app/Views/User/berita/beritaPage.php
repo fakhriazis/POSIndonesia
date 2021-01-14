@@ -3,18 +3,32 @@
 <?= $this->section('content'); ?>
 
 <div class="content-wrapper">
+    <section class="container">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Tabel Berita</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+    </section>
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Tabel Berita</h3>
+                <div class="my-3">
+                    <a class="btn btn-success" href="<?= base_url('/user/berita/tambah') ?>" role="button">Tambah Berita</a>
+                </div>
             </div>
             <div class="tabble-title">
                 <div class="row">
-                    <div class="col-sm-6">
-                        <div class="my-3">
-                            <a class="btn btn-success" href="<?= base_url('/user/berita/tambah') ?>" role="button">Tambah Berita</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <!-- /.card-header -->
