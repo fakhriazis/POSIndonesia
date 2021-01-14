@@ -1,4 +1,6 @@
-<?php namespace App\Controllers\Admin;
+<?php
+
+namespace App\Controllers\Admin;
 
 use App\Controllers\BaseController;
 use App\Models\Admin\AdminModel;
@@ -49,7 +51,7 @@ class CSAdmin extends BaseController
 	{
 		$model = new AdminModel();
 		$data['title'] = 'Edit Admin';
-		$data['listAdmin'] = $model->read('help_user', 'iduser' ,$id)->getResult();
+		$data['listAdmin'] = $model->read('help_user', 'iduser', $id)->getResult();
 		return view('Admin\Admin\viewEditAdmin', $data);
 	}
 
@@ -79,11 +81,11 @@ class CSAdmin extends BaseController
 		return redirect()->to(base_url('/layanan'));
 	}
 
-	public function viewEditLayanan()
+	public function viewEditLayanan($id)
 	{
 		$model = new AdminModel();
 		$data['title'] = 'Edit Admin';
-		$data['listAdmin'] = $model->read('help_layanan', 'idlayanan' ,$id)->getResult();
+		$data['listAdmin'] = $model->read('help_layanan', 'idlayanan', $id)->getResult();
 		// return view('Admin\Admin\viewEditAdmin', $data);
 	}
 
@@ -104,7 +106,10 @@ class CSAdmin extends BaseController
 	public function editLayanan($id)
 	{
 		$model = new AdminModel();
-		$model->ubah('help_layanan', 'idlayanan', $id);
+		$data = [
+			'namalayanan' => $this->request->getPost('namalayanan')
+		];
+		$model->ubah('help_layanan', 'idlayanan', $id, $data);
 		return redirect()->to(base_url('/layanan'));
 	}
 
@@ -135,8 +140,14 @@ class CSAdmin extends BaseController
 	{
 		$model = new AdminModel();
 		$data['title'] = 'Document Control';
+		$data['aplikasi'] = 'aplikasi';
 		$data['listDocument	'] = $model->readAll('help_document')->getResult();
-		return view('Admin\Document\viewDocumentdetail', $data);
+		return view('Document\viewDetailDocument', $data);
+	}
+	public function viewTambahDocument()
+	{
+		$data['title'] = 'Tambah Document';
+		return view('User\Document\viewTambahDocument', $data);
 	}
 	//--------------------------------------------------------------------
 	public function viewLog()

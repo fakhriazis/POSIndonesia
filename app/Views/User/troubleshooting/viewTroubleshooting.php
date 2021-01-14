@@ -1,15 +1,12 @@
 <?= $this->extend('layout/template'); ?>
-
 <?= $this->section('content'); ?>
-
-<!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <section class="container">
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Data Mitra</h1>
+                        <h1>Form Kelola Troubleshooting</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -21,35 +18,36 @@
             </div><!-- /.container-fluid -->
         </div>
     </section>
-    <!-- /.content-header -->
-    <!-- Horizontal Form -->
-
     <div class="container">
         <div class="card">
             <div class="card-header">
                 <div class="my-3">
-                    <a class="btn btn-success" href="<?= base_url('/user/referensi/data-mitra/tambah') ?>" role="button">Tambah Mitra</a>
+                    <a class="btn btn-success" href="<?= base_url('/user/troubleshooting/tambah') ?>" role="button">Tambah Troubleshooting</a>
                 </div>
             </div>
             <!-- /.card-header -->
+            <div class="tabble-title">
+                <div class="row">
+                </div>
+            </div>
             <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Nama Mitra</th>
-                            <th>Aksi</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama Mitra</th>
+                            <th scope="col">Respon Code</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
                     </thead>
                     <tbody>
                         <!-- <?= $i = 1; ?> -->
-                        <?php foreach ($mitra as $row) : ?>
+                        <?php foreach ($tsModel as $row) : ?>
                             <tr>
                                 <td><?= $i++; ?></td>
                                 <td><?= $row->nama_mitra ?></td>
-                                <td>
-                                    <a href="?modul=info&act=editinfo&id=32" title="edit" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                    <a href="script/info/delete.php?id=32" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')" title="hapus" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                                </td>
+                                <td><?= $row->kode_error ?></td>
+                                <td>Aksi</td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
@@ -57,7 +55,7 @@
             </div>
             <!-- /.card-body -->
         </div>
+        <!-- /.card -->
     </div>
-
-
-    <?= $this->endSection(); ?>
+</div>
+<?= $this->endSection(); ?>

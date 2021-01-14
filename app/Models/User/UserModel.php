@@ -19,4 +19,12 @@ class UserModel extends Model
         $builder = $this->db->table($table);
         $query = $builder->insert($data);
     }
+
+    public function join()
+    {
+        $builder = $this->db->table('help_mitra');
+        $builder->select('*');
+        $builder->join('help_responcode', 'help_mitra.idmitra = help_responcode.idresponcode');
+        return $builder->get();;
+    }
 }

@@ -5,6 +5,8 @@ namespace App\Controllers\User;
 use App\Models\Help_BeritaModel;
 use App\Controllers\BaseController;
 use App\Models\User\UserModel;
+use App\Models\Admin\AdminModel;
+use Prophecy\Doubler\Generator\Node\ReturnTypeNode;
 
 class Admin extends BaseController
 {
@@ -28,6 +30,7 @@ class Admin extends BaseController
         return view('user/adminPage');
     }
 
+    //========== REFERENSI MITRA & MITRA ====================
     public function referensi()
     {
         return view('user/referensiPage');
@@ -35,22 +38,57 @@ class Admin extends BaseController
 
     public function referensiResponCode()
     {
-        return view('user/referensi/referensiResponCode');
+        $referensiCodeModel = new UserModel();
+        $rcModel = $referensiCodeModel->readAll('help_responcode')->getResult();
+
+        $data = [
+            'responCode' => $rcModel
+        ];
+
+        return view('user/referensi/referensiResponCode', $data);
     }
 
     public function referensiDataMitraProduk()
     {
-        return view('/user/referensi/referensiDataMitraProduk');
+        $referensiMitraModel = new UserModel();
+        $rmModel = $referensiMitraModel->readAll('help_mitra')->getResult();
+
+        $data = [
+            'mitra' => $rmModel
+        ];
+        return view('/user/referensi/referensiDataMitraProduk', $data);
+    }
+
+    public function tambahResponCode()
+    {
+        return view('/user/referensi/viewTambahResponCode');
+    }
+
+    public function tambahMitra()
+    {
+        return view('/user/referensi/viewTambahMitra');
+    }
+    //==========================================================
+    public function viewTroubleshooting()
+    {
+        $troubleshootingModel = new UserModel();
+        $tsModel = $troubleshootingModel->join()->getResult();
+
+        $data = [
+            'tsModel' => $tsModel
+        ];
+        return view('user/troubleshooting/viewTroubleshooting', $data);
     }
 
     public function troubleshooting()
     {
-        return view('user/troubleshootingPage');
+
+        return view('user/troubleshooting/troubleshootingPage');
     }
 
     public function report()
     {
-        return view('user/reportPage');
+        return view('user/report/reportPage');
     }
 
     public function kelolaFaq()
@@ -64,7 +102,7 @@ class Admin extends BaseController
             'faq' => $faq
         ];
 
-        return view('user/kelolaFaqPage', $data);
+        return view('user/kelolaFaq/kelolaFaqPage', $data);
     }
 
     public function catatan()
@@ -78,7 +116,7 @@ class Admin extends BaseController
             'catatan' => $catatan
         ];
 
-        return view('user/catatanPage', $data);
+        return view('user/catatan/catatanPage', $data);
     }
 
     public function tambahCatatan()
@@ -101,7 +139,7 @@ class Admin extends BaseController
 
     public function viewTambahCatatan()
     {
-        return view('user/tambahCatatanPage');
+        return view('user/catatan/tambahCatatanPage');
     }
 
     public function berita()
@@ -113,7 +151,12 @@ class Admin extends BaseController
             'berita' => $berita
         ];
 
-        return view('user/beritaPage', $data);
+        return view('user/berita/beritaPage', $data);
+    }
+
+    public function tambahBerita()
+    {
+        return view('/user/berita/viewTambahBerita');
     }
 
     public function form()
@@ -128,32 +171,61 @@ class Admin extends BaseController
 
     public function viewTambahFAQ()
     {
-        return view('user/tambahfaq');
+        return view('user/kelolaFaq/tambahfaq');
     }
     public function TambahFAQ()
     {
-        // $model = new AdminModel();
+        $model = new UserModel();
         $data = [
             'pertanyaan' => $this->request->getPost('pertanyaan'),
             'jawaban' => $this->request->getPost('jawaban')
         ];
-        // $model->tambah('help_layanan', $data);
+        $model->tambah('help_faq', $data);
         return redirect()->to(base_url('/user/kelolaFaq'));
     }
 
     public function gangguanSementara()
     {
-        return view('user/gangguan/gangguanSementara');
+        $gangguanSementaraModel = new UserModel();
+        $gsModel = $gangguanSementaraModel->readAll('help_infosementara')->getResult();
+
+        $data = [
+            'gsModel' => $gsModel
+        ];
+
+        return view('user/gangguan/gangguanSementara', $data);
     }
 
     public function infoGangguan()
     {
-        return view('/user/gangguan/infoGangguan');
+        $infoGangguan = new UserModel();
+        $gangguanModel = $infoGangguan->readAll('help_info')->getResult();
+
+        $data = [
+            'gangguan' => $gangguanModel
+        ];
+
+        return view('/user/gangguan/infoGangguan', $data);
+    }
+
+    public function tambahInfoGangguan()
+    {
+        return view('/user/gangguan/viewTambahInfo');
     }
 
     public function documentControl()
     {
-        return view('/user/documentControl');
+        return view('/user/document/documentControl');
+    }
+
+    public function viewDocumentDetail()
+    {
+        $model = new AdminModel();
+        $data['title'] = 'Document Control';
+        $data['aplikasi'] = 'aplikasi';
+        $data['listDocument	'] = $model->readAll('help_document')->getResult();
+        //return view('Document\viewDetailDocument', $data);
+        return view('/user/document/viewDocumentDetail', $data);
     }
     //--------------------------------------------------------------------
 

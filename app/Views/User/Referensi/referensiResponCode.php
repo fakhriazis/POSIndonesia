@@ -5,52 +5,62 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
-                    </ol>
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
-    </div>
+    <section class="container">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Data Respon Code</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard v1</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+    </section>
     <!-- /.content-header -->
     <!-- Horizontal Form -->
 
     <div class="container">
-        <div class="card card-info">
+        <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Form Kelola Respon Code</h3>
+                <div class="my-3">
+                    <a class="btn btn-success" href="<?= base_url('/user/referensi/respon-code/tambah') ?>" role="button">Tambah Respon Code</a>
+                </div>
             </div>
             <!-- /.card-header -->
-            <!-- form start -->
-            <form class="form-horizontal" action="<?= base_url('/user/catatan/tambah/aksi'); ?>">
-                <div class="card-body">
-                    <div class="form-group row">
-                        <label for="permasalahan" class="col-sm-2 col-form-label">Respon Code</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="permasalahan" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="dampak" class="col-sm-2 col-form-label">Deskripsi</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="dampak" placeholder="">
-                        </div>
-                    </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Submit</button>
-                    <button type="submit" class="btn btn-default float-right">Cancel</button>
-                </div>
-                <!-- /.card-footer -->
-            </form>
+            <div class="card-body">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Respon Code</th>
+                            <th>Deskripsi</th>
+                            <th>Aksi</th>
+                    </thead>
+                    <tbody>
+                        <!-- <?= $i = 1; ?> -->
+                        <?php foreach ($responCode as $row) : ?>
+                            <tr>
+                                <td><?= $i++; ?></td>
+                                <td><?= $row->kode_error ?></td>
+                                <td><?= $row->deskripsi ?></td>
+                                <td>
+                                    <a href="?modul=info&act=editinfo&id=32" title="edit" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                    <a href="script/info/delete.php?id=32" onclick="return confirm('Apakah anda yakin akan menghapus data ini?')" title="hapus" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
         </div>
     </div>
-
-
-    <?= $this->endSection(); ?>
+</div>
+</div>
+<?= $this->endSection(); ?>

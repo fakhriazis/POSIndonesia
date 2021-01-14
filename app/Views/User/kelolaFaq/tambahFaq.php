@@ -27,7 +27,7 @@
                 <div class="card card-outline card-info">
                     <!-- /.card-header -->
                     <div class="card-body pad">
-                        <form action="<?= base_url('User/Admin/tambahFaq') ?>" method="POST">
+                        <form action="<?= base_url('User/Admin/tambahFAQ') ?>" method="POST">
                             <div class="mb-3">
                                 <label for="pertanyaan">Pertanyaan</label>
                                 <input name="pertanyaan" type="textarea" class="form-control">

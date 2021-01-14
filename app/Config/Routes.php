@@ -41,9 +41,6 @@ $routes->get('/admin/tambah', 'Admin/CSAdmin::viewTambahAdmin');
 
 $routes->get('/layanan', 'Admin/CSAdmin::viewLayanan');
 
-$routes->get('/document', 'Admin/CSAdmin::viewDocument');
-$routes->get('/document/detail', 'Admin/CSAdmin::viewDocumentDetail');
-
 $routes->get('/dashboard', 'Admin/CSAdmin::dashboard');
 
 //routes user
@@ -53,24 +50,43 @@ $routes->get('/user', 'User/Admin::index');
 $routes->get('/user/referensi', 'User/Admin::referensi');
 $routes->get('/user/referensi/respon_code', 'User/Admin::referensiResponCode');
 $routes->get('/user/referensi/data_mitra_produk', 'User/Admin::referensiDataMitraProduk');
+$routes->get('/user/referensi/respon-code/tambah', 'User/Admin::tambahResponCode'); //tambah respon code
+$routes->get('/user/referensi/data-mitra/tambah', 'User/Admin::tambahMitra'); //tambah mitra
 
 //==routes user/gangguan
 $routes->get('/user/gangguan/gangguan_sementara', 'User/Admin::gangguanSementara');
 $routes->get('/user/gangguan/info_gangguan', 'User/Admin::infoGangguan');
+$routes->get('/user/gangguan/info_gangguan/tambah', 'User/Admin::tambahInfoGangguan'); //tambah info gangguan
+
 
 //==routes user/document control
 $routes->get('/user/document', 'User/Admin::documentControl');
+$routes->get('/user/document/tambah', 'Admin/CSAdmin::viewTambahDocument');
+$routes->get('/document', 'Admin/CSAdmin::viewDocument');
+$routes->get('/user/document/detail2', 'Admin/CSAdmin::viewDocumentDetail');
+$routes->get('/user/document/detail', 'User/Admin::viewDocumentDetail');
 
-$routes->get('/user/troubleshooting', 'User/Admin::troubleshooting');
+//==routes troubleshooting
+$routes->get('/user/troubleshooting', 'User/Admin::viewTroubleshooting'); //viewTroubleshooting
+$routes->get('/user/troubleshooting/tambah', 'User/Admin::troubleshooting'); //tambah troubleshooting
+
+//==routes user/kelolaFaq
 $routes->get('/user/kelolaFaq', 'User/Admin::kelolaFaq');
 $routes->get('/user/kelolaFaq/tambah', 'User/Admin::viewtambahfaq');
+
+//==routes user/catatan
 $routes->get('/user/catatan', 'User/Admin::catatan');
 $routes->get('/user/catatan/tambah', 'User/Admin::viewTambahCatatan');
 $routes->get('/user/catatan/tambah/aksi', 'User/Admin::TambahCatatan');
+
+//==routes berita
 $routes->get('/user/berita', 'User/Admin::berita');
+$routes->get('/user/berita/tambah', 'User/Admin::tambahBerita');
+
+
 $routes->get('/user/form', 'User/Admin::form');
 $routes->get('/user/data', 'User/Admin::data');
-$routes->get('/user/troubleshooting', 'User/Admin::troubleshooting');
+
 $routes->get('/user/referensi', 'User/Admin::referensi');
 $routes->get('/user/report', 'User/Admin::report');
 
